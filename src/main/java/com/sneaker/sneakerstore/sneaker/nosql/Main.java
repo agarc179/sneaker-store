@@ -36,10 +36,12 @@ public class Main {
     private void showEntities(){
         SneakerService service = new SneakerService();
         List<ISneaker> sneakers = service.getAllSneakers();
+
+        System.out.println("");
+        System.out.println("---Sneaker Collection---");
         for(ISneaker sneaker: sneakers){
             System.out.println(sneaker.getId() + ", " + sneaker.getName() + ", " + sneaker.getBrand() + ", " + sneaker.getColor());
         }
-        //System.out.println(sneakers);
 
     }
 }
