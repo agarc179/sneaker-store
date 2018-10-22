@@ -9,22 +9,22 @@
     <body>
         <h1>Sneaker Raffle</h1>
         <div class="navbar">
-            <a href="index.html"> Home</a> 
-            <a href="store.html"> Store</a> 
-            <a class="active" href="raffle.html"> Raffle</a> 
-            <a href="storelookup.html"> Store Look Up</a>
+            <a href="/"> Home</a>
+            <a href="store"> Store</a>
+            <a class="active" href="raffle"> Raffle</a>
+            <a href="storelookup"> Store Look Up</a>
         </div>
         <h2></h2>
         <div>
-            <form>
+            <form action="#" th:action="@{/raffle}" th:object="${raffle}">
                 <select name="shoeSelection">
                     <option value="Yee732849">Yeezy boost 350 v2</option>
                     <option value="Tra105778">Travis Scott Air Jordan IV</option>
                     <option value="Ywr700123">Yeezy Wave Runner boost 700</option>
                 </select>
-                <p> <input type="text" name="email" placeholder="Email Address" /></p>
-                <p> <input type="text" name="name" placeholder="Name" /></p>
-                <p> <input type="text" name="phoneNumber" placeholder="Phone Number" /></p>
+                <p> <input type="text" th:field="*{email}" name="email" placeholder="Email Address" /></p>
+                <p> <input type="text" th:field="*{name}" name="name" placeholder="Name" /></p>
+                <p> <input type="text" th:field="*{phoneNumber}" name="phoneNumber" placeholder="Phone Number" /></p>
                 <button type="submit" onclick="">Submit</button>
             </form>  
         </div>
