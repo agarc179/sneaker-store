@@ -1,7 +1,7 @@
-package com.sneaker.sneakerstore.sneaker.nosql;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.nosql;
 
 import com.sneaker.sneakerstore.sneaker.ISneaker;
-import com.sneaker.sneakerstore.sneaker.jdbc.Sneaker;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.jdbc.Sneaker;
 
 import java.util.List;
 import java.util.Random;

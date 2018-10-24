@@ -36,4 +36,9 @@ public class SneakerShopController {
         model.addAttribute("storelookup", new StoreLookUp());
         return "storelookup";
     }
+
+    @PostMapping("/storelookup")
+    public String storeLookUpSubmit(@ModelAttribute StoreLookUp storeLookUp){
+        return "storelookup";
+    }
 }

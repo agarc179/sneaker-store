@@ -1,4 +1,4 @@
-package com.sneaker.sneakerstore.sneaker.jdbc;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.jdbc;
 
 import com.sneaker.sneakerstore.sneaker.ISneaker;
 

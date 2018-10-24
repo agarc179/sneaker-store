@@ -1,11 +1,11 @@
-package com.sneaker.sneakerstore.sneaker.nosql;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.nosql;
 
 import com.mongodb.*;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.sneaker.sneakerstore.sneaker.ISneaker;
 import com.sneaker.sneakerstore.sneaker.ISneakerService;
-import com.sneaker.sneakerstore.sneaker.jdbc.Sneaker;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.jdbc.Sneaker;
 import org.bson.Document;
 
 import java.util.ArrayList;
