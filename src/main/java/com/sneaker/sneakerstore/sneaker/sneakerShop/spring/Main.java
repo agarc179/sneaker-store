@@ -1,48 +1,61 @@
 //package com.sneaker.sneakerstore.sneaker.sneakerShop.spring;
 //
-//import com.sneaker.sneakerstore.sneaker.sneakerShop.jpa.Sneaker;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.boot.SpringApplication;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-//import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+//
+//import java.util.List;
 //
 //@SpringBootApplication
 //@EnableJpaAuditing
-//@EnableJpaRepositories
-////@ComponentScan("com.sneaker.sneakerstore.sneaker")
+//@ComponentScan("com.sneaker.sneakerstore.sneaker.sneakerShop.spring")
 //public class Main implements CommandLineRunner {
 //
 //    @Autowired
 //    SneakerRepository repository;
 //
+//
 //    public static void main(String[] args) {
 //        SpringApplication app = new SpringApplication(Main.class);
 //        app.run(args);
+//
 //    }
 //
 //    @Override
 //    public void run(String... args) throws Exception {
-//        createExample();
+//        //createExample();
+//
+//        List<Sneaker> sneakerList = getAllSneakers();
+//        for(Sneaker sneaker : sneakerList){
+//            System.out.println("Name: " + sneaker.getName());
+//        }
 //
 //    }
 //
+//    // create a new entry in sneaker table
 //    private void createExample() {
 //        System.out.println(repository.count());
 //        Sneaker sneaker = new Sneaker();
-//        sneaker.setId("Air209445");
-//        sneaker.setName("Air Force One");
-//        sneaker.setBrand("Nike");
-//        sneaker.setColor("White");
-//        sneaker.setSize("11");
-//        sneaker.setType("Casual");
-//        sneaker.setPrice("90");
+//        //sneaker.setId(new Long(209446));
+//        sneaker.setName("Travis Scott Air Jordan IV");
+//        sneaker.setBrand("Jordan");
+//        sneaker.setColor("Light Blue");
+//        sneaker.setSize("10");
+//        sneaker.setType("Street");
+//        sneaker.setPrice("225");
 //        sneaker.setGender("male");
 //
 //        repository.save(sneaker);
 //
 //        System.out.println(repository.count());
+//    }
+//
+//    // querys all the sneaker inside the sneaker table
+//    private List<Sneaker> getAllSneakers(){
+//        System.out.println(repository.count());
+//        return repository.findAll();
 //    }
 //}

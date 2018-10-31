@@ -1,10 +1,9 @@
-package com.sneaker.sneakerstore.sneaker;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces;
 
 public interface ISneaker {
-
     boolean equals(Object object);
 
-    String getId();
+    Long getId();
 
     String getName();
 
@@ -20,7 +19,7 @@ public interface ISneaker {
 
     String getGender();
 
-    void setId(String id);
+    void setId(Long id);
 
     void setName(String name);
 
