@@ -1,16 +1,19 @@
-package com.sneaker.sneakerstore.sneaker.sneakerShop.nosql;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.services;
 
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Store;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStore;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStoreService;
 import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//MongoDB StoreService
 
 public class StoreService implements IStoreService {
 

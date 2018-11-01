@@ -1,6 +1,8 @@
-package com.sneaker.sneakerstore.sneaker.sneakerShop.nosql;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.entities;
 
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStore;
+
+//MongoDB Entity
 
 public class Store implements IStore {
 

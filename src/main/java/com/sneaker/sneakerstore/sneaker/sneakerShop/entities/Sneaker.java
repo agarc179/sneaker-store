@@ -1,10 +1,12 @@
-package com.sneaker.sneakerstore.sneaker.sneakerShop.spring;
+package com.sneaker.sneakerstore.sneaker.sneakerShop.entities;
 
 
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.ISneaker;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+//SQL Entity
 
 @Entity
 public class Sneaker implements Serializable, ISneaker {

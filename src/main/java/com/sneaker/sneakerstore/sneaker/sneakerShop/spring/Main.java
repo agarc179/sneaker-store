@@ -1,5 +1,6 @@
 //package com.sneaker.sneakerstore.sneaker.sneakerShop.spring;
 //
+//import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Sneaker;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.boot.SpringApplication;
