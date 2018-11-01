@@ -16,9 +16,12 @@
         <h2></h2>
 
         <form action="#" th:action="@{/storelookup}" th:object="${storelookup}" method="post">
-            <p> <input type="text" th:field="*{zipCode}" name="zip" placeholder="Zip Code" /></p>
-            <button type="lookItUpButton" onclick="alert('Stores near you')">Look it up</button>
+            <p> <input type="text" th:field="*{zip}" name="zip" placeholder="Zip Code" /></p>
+            <button type="lookItUpButton" class="btn btn-default">Look it up</button>
+            <!--button type="lookItUpButton" onclick="alert('Stores near you' + ${storelookup.zipCode})">Look it up</button-->
         </form>
+        <p th:text="'Store Name: ' + ${storelookup.name}" />
+        <p th:text="'Zip: ' + ${storelookup.zip}" />
 
         <img src="images/googleMaps.png"></img>
     </body>
