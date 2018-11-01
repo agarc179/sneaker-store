@@ -2,8 +2,8 @@ package com.sneaker.sneakerstore.sneaker;
 
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Sneaker;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStore;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.services.SneakerService;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.StoreService;
-import com.sneaker.sneakerstore.sneaker.sneakerShop.repositories.SneakerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +14,6 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import java.util.List;
 
 
-//@SpringBootApplication
 @SpringBootApplication(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
 //@EnableJpaAuditing
 //@ComponentScan("com.sneaker.sneakerstore.sneaker.sneakerShop.spring")
@@ -22,9 +21,8 @@ import java.util.List;
 //@EnableScan("edu.depaul.cdm.se.sampleproject.book.jpa")
 public class ProjectApplication implements CommandLineRunner {
 
-	@Autowired
-	SneakerRepository repository;
-
+    @Autowired
+    private SneakerService sneakerService;
 
 	public static void main(String[] args) {
 		ProjectApplication mainMongoDB = new ProjectApplication();
@@ -43,7 +41,7 @@ public class ProjectApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         System.out.println("__PostgresSQL STARTS___");
-        List<Sneaker> sneakerList = getAllSneakers();
+        List<Sneaker> sneakerList = sneakerService.getAllSneakers();
         for(Sneaker sneaker : sneakerList){
             System.out.println("Name: " + sneaker.getName());
         }
@@ -61,10 +59,5 @@ public class ProjectApplication implements CommandLineRunner {
 		}
 	}
 
-    // query all the sneakers inside the sneaker table PostgresSQL
-    private List<Sneaker> getAllSneakers(){
-        System.out.println(repository.count());
-        return repository.findAll();
-    }
 
 }
