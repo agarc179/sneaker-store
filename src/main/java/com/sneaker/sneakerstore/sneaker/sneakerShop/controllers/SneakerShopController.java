@@ -15,6 +15,7 @@ import java.util.List;
 
 @Controller
 public class SneakerShopController {
+    StoreService storeService = new StoreService();
 
     @Value("${spring.application.name}")
     private String appName;
@@ -42,9 +43,9 @@ public class SneakerShopController {
         return "storelookup";
     }
 
+
     @PostMapping("/storelookup")
     public String storeLookUpSubmit(IStore store, Model model){
-        StoreService storeService = new StoreService();
         List<IStore> stores = storeService.getStore(store.getZip());
 
         for(IStore s: stores){
