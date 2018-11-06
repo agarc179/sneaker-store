@@ -21,16 +21,16 @@ public class SneakerService {
     }
 
     // create a new entry in sneaker table
-    private void createExample() {
+    public void createSneaker() {
         System.out.println(repository.count());
         Sneaker sneaker = new Sneaker();
         //sneaker.setId(new Long(209446));
-        sneaker.setName("Travis Scott Air Jordan IV");
-        sneaker.setBrand("Jordan");
-        sneaker.setColor("Light Blue");
-        sneaker.setSize("10");
+        sneaker.setName("Yeezy Wave Runner boost 700");
+        sneaker.setBrand("Adidas");
+        sneaker.setColor("Light Gray");
+        sneaker.setSize("8.5");
         sneaker.setType("Street");
-        sneaker.setPrice("225");
+        sneaker.setPrice("300");
         sneaker.setGender("male");
 
         repository.save(sneaker);

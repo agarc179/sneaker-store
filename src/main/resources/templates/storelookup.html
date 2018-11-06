@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Chi-City Sneaker Store</title>
         <link rel="stylesheet" href="css/main.css">
@@ -15,12 +15,15 @@
         </div>
         <h2></h2>
 
-        <form action="#" th:action="@{/storelookup}" th:object="${storelookup}" method="post">
+        <form action="#" th:action="@{/storelookup}" th:object="${store}" method="post">
             <p> <input type="text" th:field="*{zip}" name="zip" placeholder="Zip Code" /></p>
             <button type="lookItUpButton" class="btn btn-default">Look it up</button>
         </form>
-        <p th:text="'Store Name: ' + ${storelookup.name}" />
-        <p th:text="'Zip: ' + ${storelookup.zip}" />
+
+
+        <p th:text="'Store Name: ' + ${store.name}" />
+        <p th:text="'Store Address: ' + ${store.street} + ', ' + ${store.city}" />
+        <p th:text="'Zip: ' + ${store.zip}" />
 
         <img src="images/googleMaps.png"></img>
     </body>

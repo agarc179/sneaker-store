@@ -39,7 +39,7 @@ public class SneakerShopController {
 
     @GetMapping("/storelookup")
     public String storeLookUpForm(Model model){
-        model.addAttribute("storelookup", new Store());
+        model.addAttribute("store", new Store());
         return "storelookup";
     }
 
@@ -49,10 +49,9 @@ public class SneakerShopController {
         List<IStore> stores = storeService.getStore(store.getZip());
 
         for(IStore s: stores){
-            model.addAttribute("storelookup", s);
+            model.addAttribute("store", s);
         }
 
-        //model.addAttribute("storelookup", store);
         return "storelookup";
     }
 }
