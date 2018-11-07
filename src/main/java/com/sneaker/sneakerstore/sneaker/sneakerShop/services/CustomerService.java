@@ -18,6 +18,7 @@ public class CustomerService {
     @Autowired
     public void setCustomerRepository(CustomerRepository cp) { this.repository = cp; }
 
+    // this is for testing purposes
     public void saveCustomerRaffleInfo(){
         System.out.println(repository.count());
         Customer customer = new Customer();
@@ -32,11 +33,9 @@ public class CustomerService {
     }
 
     public void saveCustomerRaffleInfo(Customer customer){
-        System.out.println(repository.count());
 
         repository.save(customer);
 
-        System.out.println(repository.count());
     }
 
     public Customer getCustomer(Long raffleId){

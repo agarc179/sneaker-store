@@ -20,7 +20,7 @@ public class SneakerService {
         this.repository = sp;
     }
 
-    // create a new entry in sneaker table
+    // create a new entry in sneaker table for testing purposes
     public void createSneaker() {
         System.out.println(repository.count());
         Sneaker sneaker = new Sneaker();
@@ -38,10 +38,27 @@ public class SneakerService {
         System.out.println(repository.count());
     }
 
+    public Sneaker saveSneaker(Sneaker sneaker){
+        Sneaker s = new Sneaker();
+
+        s.setId(sneaker.getId());
+        s.setBrand(sneaker.getBrand());
+        s.setName(sneaker.getName());
+        s.setColor(sneaker.getColor());
+        s.setPrice(sneaker.getPrice());
+        s.setSize(sneaker.getSize());
+        s.setType(sneaker.getType());
+        s.setGender(sneaker.getGender());
+
+        return s;
+
+    }
+
     public Sneaker getSneaker(Long sneakerId){
 
+
         //will get the sneaker by a sneakerId
-        Sneaker sneaker = repository.getOne(sneakerId);
+        Sneaker sneaker = saveSneaker(repository.getOne(sneakerId));
 
         return sneaker;
     }

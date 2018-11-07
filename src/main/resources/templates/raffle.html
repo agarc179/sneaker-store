@@ -30,8 +30,11 @@
 
             <p th:text="'RaffleID: ' + ${customer.raffleId}" />
             <p th:text="'Customer Contact Info: ' + ${customer.email} + ', ' + ${customer.name} + ', ' + ${customer.phoneNumber}" />
-            <!--<p th:text="'Sneaker Info: ' + ${raffleInfo.brand} + ', ' + ${raffleInfo.sneakerName}" />-->
-
+            <div th:object="${sneaker}">
+                <!--<p>Sneaker: <span th:text="*{brand}">brand</span>.</p>-->
+                <!--<p th:text="'Sneaker Info: ' + ${sneaker.brand} + ', ' + ${sneaker.name}" />-->
+            </div>
+            <!--<p th:object="${sneaker}" th:text="'Sneaker Info: ' + ${sneaker.brand} + ', ' + ${sneaker.name}" />-->
         </div>
     </body>
 </html>

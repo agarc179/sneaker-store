@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class SneakerShopController {
@@ -59,7 +60,8 @@ public class SneakerShopController {
         Customer c = customerService.getCustomer(customer.getRaffleId());
         model.addAttribute("customer", c);
 
-        Sneaker sneaker = sneakerService.getSneaker(customer.getSneakerId());
+        Sneaker sneaker = sneakerService.getSneaker(c.getSneakerId());
+
         model.addAttribute("sneaker", sneaker);
 //
 //        RaffleInfo raffleInfo = new RaffleInfo();
