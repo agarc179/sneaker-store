@@ -38,6 +38,14 @@ public class SneakerService {
         System.out.println(repository.count());
     }
 
+    public Sneaker getSneaker(Long sneakerId){
+
+        //will get the sneaker by a sneakerId
+        Sneaker sneaker = repository.getOne(sneakerId);
+
+        return sneaker;
+    }
+
     // querys all the sneaker inside the sneaker table
     public List<Sneaker> getAllSneakers(){
         System.out.println(repository.count());
