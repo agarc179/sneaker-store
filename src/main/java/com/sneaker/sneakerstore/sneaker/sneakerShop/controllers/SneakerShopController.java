@@ -1,10 +1,8 @@
 package com.sneaker.sneakerstore.sneaker.sneakerShop.controllers;
 
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Customer;
-import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.RaffleInfo;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Sneaker;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Store;
-import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.ICustomer;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStore;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.CustomerService;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.SneakerService;
@@ -14,11 +12,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class SneakerShopController {
@@ -63,16 +59,6 @@ public class SneakerShopController {
         Sneaker sneaker = sneakerService.getSneaker(c.getSneakerId());
 
         model.addAttribute("sneaker", sneaker);
-//
-//        RaffleInfo raffleInfo = new RaffleInfo();
-//        raffleInfo.setRaffleId(c.getRaffleId());
-//        raffleInfo.setEmail(c.getEmail());
-//        raffleInfo.setName(c.getName());
-//        raffleInfo.setPhoneNumber(c.getPhoneNumber());
-//        raffleInfo.setBrand(sneaker.getBrand());
-//        raffleInfo.setSneakerName(sneaker.getName());
-//
-//        model.addAttribute("raffleInfo", raffleInfo);
 
         return "raffle";
     }
