@@ -27,7 +27,7 @@
 //
 //    @Override
 //    public void run(String... args) throws Exception {
-//        //createExample();
+//        //createSneaker();
 //
 //        List<Sneaker> sneakerList = getAllSneakers();
 //        for(Sneaker sneaker : sneakerList){
@@ -37,7 +37,7 @@
 //    }
 //
 //    // create a new entry in sneaker table
-//    private void createExample() {
+//    private void createSneaker() {
 //        System.out.println(repository.count());
 //        Sneaker sneaker = new Sneaker();
 //        //sneaker.setId(new Long(209446));

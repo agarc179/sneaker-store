@@ -1,7 +1,10 @@
 package com.sneaker.sneakerstore.sneaker;
 
+import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Customer;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Sneaker;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStore;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.services.CustomerService;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.services.ShoppingCartService;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.SneakerService;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,12 @@ public class ProjectApplication implements CommandLineRunner {
     @Autowired
     private SneakerService sneakerService;
 
+    @Autowired
+    private ShoppingCartService shoppingCartService;
+
+    @Autowired
+    private CustomerService customerService;
+
 	public static void main(String[] args) {
 		ProjectApplication mainMongoDB = new ProjectApplication();
 
@@ -41,10 +50,19 @@ public class ProjectApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         System.out.println("__PostgresSQL STARTS___");
-        List<Sneaker> sneakerList = sneakerService.getAllSneakers();
-        for(Sneaker sneaker : sneakerList){
-            System.out.println("Name: " + sneaker.getName());
-        }
+//        List<Sneaker> sneakerList = sneakerService.getAllSneakers();
+//        for(Sneaker sneaker : sneakerList){
+//            System.out.println("Name: " + sneaker.getName());
+//        }
+
+        //customerService.saveCustomerRaffleInfo();
+
+		//Sneaker sneaker = sneakerService.getSneaker((long) 11);
+        //System.out.println("Name: " + sneaker.getName());
+
+
+
+
     }
 
 	//MongoDB
@@ -55,7 +73,8 @@ public class ProjectApplication implements CommandLineRunner {
 		System.out.println("");
 		System.out.println("---Store collection based on zipCode: " + zip);
 		for(IStore store: stores){
-			System.out.println(store.getName() + ", " + store.getZip());
+			System.out.println(store.getName() + ", " + store.getZip() +
+					", " + store.getStreet() + ", " + store.getCity());
 		}
 	}
 

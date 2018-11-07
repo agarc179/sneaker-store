@@ -66,8 +66,8 @@ public class StoreService implements IStoreService {
             public void apply(Document d) {
                 Store s = new Store();
                 s.setName(d.get(name, String.class));
-                s.setCity(d.get(street, String.class));
-                s.setStreet(d.get(city, String.class));
+                s.setStreet(d.get(street, String.class));
+                s.setCity(d.get(city, String.class));
                 s.setZip(d.get(zip, String.class));
                 if(s.getZip().equals(zipCode)){
                     stores.add(s);
