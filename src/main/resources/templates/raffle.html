@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Chi-City Sneaker Store</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/raffle.css">
-        <script src="js/dropdown.js"></script>
+        <!--<script src="js/dropdown.js"></script>-->
     </head>
     <body>
         <h1>Sneaker Raffle</h1>
@@ -16,17 +16,25 @@
         </div>
         <h2></h2>
         <div>
-            <form action="#" th:action="@{/raffle}" th:object="${raffle}">
-                <select name="shoeSelection">
-                    <option value="Yee732849">Yeezy boost 350 v2</option>
-                    <option value="Tra105778">Travis Scott Air Jordan IV</option>
-                    <option value="Ywr700123">Yeezy Wave Runner boost 700</option>
+            <form action="#" th:action="@{/raffle}" th:object="${customer}" method="post">
+                <select th:field="*{sneakerId}" name="shoeSelection">
+                    <option th:value="${9}" value=9>Yeezy boost 350 v2</option>
+                    <option th:value="${11}" value=11>Travis Scott Air Jordan IV</option>
+                    <option th:value="${12}" value=12>Yeezy Wave Runner boost 700</option>
                 </select>
                 <p> <input type="text" th:field="*{email}" name="email" placeholder="Email Address" /></p>
                 <p> <input type="text" th:field="*{name}" name="name" placeholder="Name" /></p>
                 <p> <input type="text" th:field="*{phoneNumber}" name="phoneNumber" placeholder="Phone Number" /></p>
                 <button type="submit" onclick="">Submit</button>
-            </form>  
+            </form>
+
+            <p th:text="'RaffleID: ' + ${customer.raffleId}" />
+            <p th:text="'Customer Contact Info: ' + ${customer.email} + ', ' + ${customer.name} + ', ' + ${customer.phoneNumber}" />
+            <div th:object="${sneaker}">
+                <!--<p>Sneaker: <span th:text="*{brand}">brand</span>.</p>-->
+                <!--<p th:text="'Sneaker Info: ' + ${sneaker.brand} + ', ' + ${sneaker.name}" />-->
+            </div>
+            <!--<p th:object="${sneaker}" th:text="'Sneaker Info: ' + ${sneaker.brand} + ', ' + ${sneaker.name}" />-->
         </div>
     </body>
 </html>
