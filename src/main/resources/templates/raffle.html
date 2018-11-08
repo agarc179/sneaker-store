@@ -16,6 +16,7 @@
         </div>
         <h2></h2>
         <div>
+
             <form action="#" th:action="@{/raffle}" th:object="${customer}" method="post">
                 <select th:field="*{sneakerId}" name="shoeSelection">
                     <option th:value="${9}" value=9>Yeezy boost 350 v2</option>
@@ -28,13 +29,16 @@
                 <button type="submit" onclick="">Submit</button>
             </form>
 
-            <p th:text="'RaffleID: ' + ${customer.raffleId}" />
-            <p th:text="'Customer Contact Info: ' + ${customer.email} + ', ' + ${customer.name} + ', ' + ${customer.phoneNumber}" />
-            <div th:object="${sneaker}">
-                <!--<p>Sneaker: <span th:text="*{brand}">brand</span>.</p>-->
-                <!--<p th:text="'Sneaker Info: ' + ${sneaker.brand} + ', ' + ${sneaker.name}" />-->
+
+            <div class="RaffleInfo">
+                <p>RaffleID: <span th:text="${customer.raffleId}">raffleID</span></p>
+                <p>Customer Email: <span th:text="${customer.email}">email</span></p>
+                <p>Customer Name: <span th:text="${customer.name}">name</span></p>
+                <p>Customer Phone Number: <span th:text="${customer.phoneNumber}">phoneNumber</span></p>
+                <p>Brand: <span th:text="${sneaker.brand}">brand</span></p>
+                <p>Name: <span th:text="${sneaker.name}">sneakerName</span></p>
             </div>
-            <!--<p th:object="${sneaker}" th:text="'Sneaker Info: ' + ${sneaker.brand} + ', ' + ${sneaker.name}" />-->
+
         </div>
     </body>
 </html>

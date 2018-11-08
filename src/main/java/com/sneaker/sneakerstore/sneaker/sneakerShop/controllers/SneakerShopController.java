@@ -43,6 +43,7 @@ public class SneakerShopController {
     @GetMapping("/raffle")
     public String raffleForm(Model model){
         model.addAttribute("customer", new Customer());
+        model.addAttribute("sneaker", new Sneaker());
         return "raffle";
     }
 

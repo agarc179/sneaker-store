@@ -20,11 +20,11 @@
             <button type="lookItUpButton" class="btn btn-default">Look it up</button>
         </form>
 
-
-        <p th:text="'Store Name: ' + ${store.name}" />
-        <p th:text="'Store Address: ' + ${store.street} + ', ' + ${store.city}" />
-        <p th:text="'Zip: ' + ${store.zip}" />
-
+        <p>Store Name: <span th:text="${store.name}">storeName</span></p>
+        <p>Store Address: <span th:text="${store.street}">storeAddress</span></p>
+        <p> <span th:text="${store.city}"></span></p>
+        <p> <span th:text="${store.zip}"></span></p>
+        
         <img src="images/googleMaps.png"></img>
     </body>
 </html>
