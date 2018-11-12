@@ -59,7 +59,7 @@ public class ProjectApplication implements CommandLineRunner {
 
 		//Sneaker sneaker = sneakerService.getSneaker((long) 11);
         //System.out.println("Name: " + sneaker.getName());
-		//
+		
 
 
 
