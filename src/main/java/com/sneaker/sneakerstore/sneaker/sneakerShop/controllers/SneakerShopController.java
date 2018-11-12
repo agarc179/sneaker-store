@@ -64,12 +64,7 @@ public class SneakerShopController {
 
         List<Sneaker> sneakerList = sneakerService.getAllSneakers();
         model.addAttribute("sneakerList", sneakerList);
-
-//        for(ShoppingCart shoppingCart: shoppingCartList){
-//            Sneaker sneaker = sneakerService.getSneaker(shoppingCart.getSneakerId());
-//            model.addAttribute("sneaker", sneaker);
-//        }
-
+        
         return "shoppingCart";
     }
 
