@@ -3,6 +3,7 @@ package com.sneaker.sneakerstore.sneaker.sneakerShop.services;
 // PostgresSQL ShoppingCart Service
 
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.ShoppingCart;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Sneaker;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.repositories.ShoppingCartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,10 @@ public class ShoppingCartService {
 
         System.out.println(repository.count());
 
+    }
+
+    public void saveSneakerInShoppingCart(ShoppingCart shoppingCart){
+        repository.save(shoppingCart);
     }
 
 

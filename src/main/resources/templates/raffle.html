@@ -11,6 +11,7 @@
         <div class="navbar">
             <a href="/"> Home</a>
             <a href="store"> Store</a>
+            <a href="shoppingCart"> Shopping Cart</a>
             <a class="active" href="raffle"> Raffle</a>
             <a href="storelookup"> Store Look Up</a>
         </div>
@@ -19,7 +20,7 @@
 
             <form action="#" th:action="@{/raffle}" th:object="${customer}" method="post">
                 <select th:field="*{sneakerId}" name="shoeSelection">
-                    <option th:value="${9}" value=9>Yeezy boost 350 v2</option>
+                    <option th:value="${10}" value=10>Yeezy boost 350 v2</option>
                     <option th:value="${11}" value=11>Travis Scott Air Jordan IV</option>
                     <option th:value="${12}" value=12>Yeezy Wave Runner boost 700</option>
                 </select>
