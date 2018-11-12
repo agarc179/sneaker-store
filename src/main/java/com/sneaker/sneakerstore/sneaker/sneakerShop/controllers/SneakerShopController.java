@@ -1,10 +1,12 @@
 package com.sneaker.sneakerstore.sneaker.sneakerShop.controllers;
 
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Customer;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.ShoppingCart;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Sneaker;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.entities.Store;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.interfaces.IStore;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.CustomerService;
+import com.sneaker.sneakerstore.sneaker.sneakerShop.services.ShoppingCartService;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.SneakerService;
 import com.sneaker.sneakerstore.sneaker.sneakerShop.services.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class SneakerShopController {
     private CustomerService customerService;
 
     @Autowired
+    private ShoppingCartService shoppingCartService;
+
+    @Autowired
     private SneakerService sneakerService;
 
     @Value("${spring.application.name}")
@@ -37,7 +42,35 @@ public class SneakerShopController {
 
     @GetMapping("/store")
     public String storePage(Model model){
+        model.addAttribute("shoppingCart", new ShoppingCart());
         return "store";
+    }
+
+    @PostMapping("/store")
+    public String sneakerSubmit(ShoppingCart shoppingCart, Model model){
+
+        model.addAttribute("shoppingCart", shoppingCart);
+
+        shoppingCartService.saveSneakerInShoppingCart(shoppingCart);
+
+        return "store";
+    }
+
+    @GetMapping("/shoppingCart")
+    public String shoppingCartPage(Model model){
+
+        List<ShoppingCart> shoppingCartList = shoppingCartService.getAllItems();
+        model.addAttribute("shoppingCartList", shoppingCartList);
+
+        List<Sneaker> sneakerList = sneakerService.getAllSneakers();
+        model.addAttribute("sneakerList", sneakerList);
+
+//        for(ShoppingCart shoppingCart: shoppingCartList){
+//            Sneaker sneaker = sneakerService.getSneaker(shoppingCart.getSneakerId());
+//            model.addAttribute("sneaker", sneaker);
+//        }
+
+        return "shoppingCart";
     }
 
     @GetMapping("/raffle")

@@ -8,13 +8,13 @@ public interface IShoppingCart {
 
     Long getSneakerId();
 
-    int getQuantity();
+    Integer getQuantity();
 
     void setId(Long id);
 
     void setSneakerId(Long sneakerId);
 
-    void setQuantity(int quantity);
+    void setQuantity(Integer quantity);
 
     String toString();
 

@@ -20,7 +20,7 @@ public class ShoppingCart implements Serializable, IShoppingCart {
     private Long sneakerId;
 
     @Column
-    private int quantity;
+    private Integer quantity;
 
     public ShoppingCart(){
 
@@ -47,12 +47,12 @@ public class ShoppingCart implements Serializable, IShoppingCart {
     }
 
     @Override
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
     @Override
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
