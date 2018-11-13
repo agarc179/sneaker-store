@@ -34,13 +34,13 @@ public class ProjectApplication implements CommandLineRunner {
     private CustomerService customerService;
 
 	public static void main(String[] args) {
-		ProjectApplication mainMongoDB = new ProjectApplication();
+		//ProjectApplication mainMongoDB = new ProjectApplication();
 
 		System.out.println("__Example___");
 		SpringApplication.run(ProjectApplication.class, args);
 
-        System.out.println("__MongoDB STARTS__");
-		mainMongoDB.showStore("60603");
+        //System.out.println("__MongoDB STARTS__");
+		//mainMongoDB.showStore("60603");
 
         System.out.println("");
 
@@ -49,7 +49,7 @@ public class ProjectApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        System.out.println("__PostgresSQL STARTS___");
+        //System.out.println("__PostgresSQL STARTS___");
 //        List<Sneaker> sneakerList = sneakerService.getAllSneakers();
 //        for(Sneaker sneaker : sneakerList){
 //            System.out.println("Name: " + sneaker.getName());
